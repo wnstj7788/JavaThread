@@ -7,6 +7,10 @@ public class JoinMainV1Jun {
 
     public static void main(String[] args) {
         log("Start");
+
+        // 해당 문제의 상황은 다음과 같음
+        // 1부터 100까지 더하는 연산을 1 - 50 을 1번 쓰레드가
+        // 51 - 100까지의 연산을 2번 쓰레드가 나눠서 작업을 수행할 것
         // runnable 생성
         SumTask sumTask1 = new SumTask(1, 50);
         SumTask sumTask2 = new SumTask(51, 100);
@@ -30,7 +34,7 @@ public class JoinMainV1Jun {
 
         //this를 명확하게 이해해야함
         // 스택 프레임을 만들 때 스택 프레임 내부에는 메서드의 이름만 존재하는 것이 아닌 내부에 this(호출한 메서드의 인스턴스)도 함께 생성됨.
-
+        // 자바는 기본적으로 지역변수에서 변수를 찾고 로컬에 없다면 This를 포함하여 필드에서 찾게 된다.
 
 
         log("resultSum = " + resultSum);
